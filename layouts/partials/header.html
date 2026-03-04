@@ -52,15 +52,7 @@
         <link rel="EditURI" type="application/rsd+xml" href="{{ "rsd.xml" | absURL }}" />
         {{- end -}}
 
-        <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.services.googleAnalytics.ID }}"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', '{{ .Site.Params.services.googleAnalytics.ID }}');
-        </script>
-
+        {{ partialCached "google-analytics/index" . .Params.analyze }}
     </head>
 
     <body lang="{{ .Site.LanguageCode }}">
