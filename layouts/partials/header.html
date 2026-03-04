@@ -52,6 +52,7 @@
         <link rel="EditURI" type="application/rsd+xml" href="{{ "rsd.xml" | absURL }}" />
         {{- end -}}
 
+        {{ partialCached "google-analytics/index" . .Params.analyze }}
     </head>
 
     <body lang="{{ .Site.LanguageCode }}">
